@@ -12,8 +12,8 @@ var RoomsView = {
       prevMessages.replaceChildren();
       // console.log('prev messages: ', prevMessages);
       var filteredMessages = Messages.allMessages.filter(msg => {
-        console.log('msg.roomname: ', msg);
-        if( msg.roomname) {
+        console.log('msg.roomname: ', msg.roomname);
+        if ( msg.roomname) {
           msg.roomname === roomname;
         }
         console.log('roomname: ', roomname);
