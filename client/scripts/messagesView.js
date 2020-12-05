@@ -13,8 +13,9 @@ var MessagesView = {
     // iterate through the messages
     if (Messages.allMessages) {
       for (let i = 0; i < Messages.allMessages.length; i++) {
-        messageHTML += MessageView.renderMessage(Messages.allMessages[i]);
-        console.log(Messages.allMessages[i]);
+        let message = Messages.allMessages[i];
+        message.text = message.text || ' '; // Protects against messages with no text property.
+        messageHTML += MessageView.renderMessage(message);
       }
       MessagesView.$chats.append(messageHTML);
     }

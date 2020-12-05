@@ -9,8 +9,6 @@ var MessageView = {
 
   renderMessage: function(message) {
     // render message to DOM in chats section
-    var test = MessageView.render(message);
-    console.log(test);
     return MessageView.render(message);
   }
 };
