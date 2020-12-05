@@ -4,7 +4,7 @@ var MessagesView = {
 
   initialize: function() {
     // get all messages
-    Messages.getAllMessages();
+    // Messages.getAllMessages(); Should not be in controller? Event instead?
     MessagesView.render();
   },
 
