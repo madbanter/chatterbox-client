@@ -57,7 +57,7 @@ describe('chatterbox', function() {
         Parse.readAll();
         expect($.ajax.calledOnce).to.be.true;
         ajaxUrl = typeof $.ajax.args[0][0] === 'string' ? $.ajax.args[0][0] : $.ajax.args[0][0].url;
-        expect(ajaxUrl).to.equal(Parse.server);
+        expect(ajaxUrl).to.equal(Parse.server + '/classes/messages'); // Modified test to accept shorter base URL.
         done();
       });
 
