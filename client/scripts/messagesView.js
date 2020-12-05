@@ -8,11 +8,12 @@ var MessagesView = {
     MessagesView.render();
   },
 
-  render: function() {
+  render: function(messages = Messages.allMessages) {
     // iterate through the messages
-    if (Messages.allMessages) {
-      for (let i = 0; i < Messages.allMessages.length; i++) {
-        let message = Messages.allMessages[i];
+    if (messages) {
+      for (let i = 0; i < messages.length; i++) {
+        let message = messages[i];
+        message.username = message.username || 'nobody';
         message.text = message.text || ' '; // Protects against messages with no text property.
         MessagesView.renderMessage(message);
       }

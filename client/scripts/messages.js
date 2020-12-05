@@ -7,15 +7,23 @@ Messages.getAllMessages = function() {
     // console.log('payload: ', payload.results);
     Messages.allMessages = payload.results;
   // Trigger View from here
-  // var filteredRoom = payload.results.filter(msg => { msg.roomname && msg.roomname.length !== 0 && !msg.roomname.includes('script'); });
-  // console.log(filteredRoom);
   }, null, '/classes/messages');
 };
 
-Messages.createMessage = function() {
-
+Messages.createMessage = function(message) {
+  Parse.create(message, function() {
+    console.log('success, message sent!');
+  });
 };
 
 Messages.deleteMessage = function() {
 
+};
+
+// Messages.createMessage(message);
+
+var message = {
+  username: 'shawndrost',
+  text: '11:20',
+  roomname: '4chan'
 };
