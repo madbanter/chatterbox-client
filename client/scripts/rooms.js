@@ -7,8 +7,6 @@ var getAllRooms = function() {
     // console.log('payload: ', payload.results);
     Rooms.allRooms = payload.results;
   // Trigger View from here
-  // var filteredRoom = payload.results.filter(msg => { msg.roomname && msg.roomname.length !== 0 && !msg.roomname.includes('script'); });
-  // console.log(filteredRoom);
   }, null, '/classes/rooms');
 };
 
@@ -19,6 +17,3 @@ var createRoom = function(roomname) {
     console.log(payload);
   }, null, '/classes/rooms');
 };
-
-getAllRooms();
-console.log('allRooms: ', Rooms);

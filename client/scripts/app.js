@@ -21,7 +21,8 @@ var App = {
     Parse.readAll((data) => {
       // examine the response from the server request:
       console.log(data);
-
+      Messages.allMessages = data.results;
+      MessagesView.initialize();
       callback();
     });
   },

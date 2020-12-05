@@ -4,18 +4,20 @@ var MessagesView = {
 
   initialize: function() {
     // get all messages
-    getAllMessages();
+    Messages.getAllMessages();
     MessagesView.render();
   },
 
   render: function() {
     var messageHTML = '';
     // iterate through the messages
-    Messages.allMessages.forEach(function(message) {
-      // render message to DOM in chats section
-      messageHTML += MessageView.render(message);
-    });
-    $chats.append(messageHTML);
+    if (Messages.allMessages) {
+      Messages.allMessages.forEach(function(message) {
+        // render message to DOM in chats section
+        messageHTML += MessageView.render(message);
+      });
+      MessagesView.$chats.append(messageHTML);
+    }
   }
 
 };
