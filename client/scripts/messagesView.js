@@ -12,12 +12,10 @@ var MessagesView = {
     var messageHTML = '';
     // iterate through the messages
     if (Messages.allMessages) {
-      Messages.allMessages.forEach(function(message) {
-        // render message to DOM in chats section
-        messageHTML += MessageView.render(message);
-      });
+      for (let i = 0; i < Messages.allMessages.length; i++) {
+        messageHTML += MessageView.renderMessage(message);
+      }
       MessagesView.$chats.append(messageHTML);
     }
   }
-
 };
