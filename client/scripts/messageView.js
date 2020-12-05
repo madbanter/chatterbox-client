@@ -7,10 +7,6 @@ var MessageView = {
       </div>
     `),
 
-  renderMessage: function(message) {
-    // render message to DOM in chats section
-    return MessageView.render(message);
-  }
 };
 
 /*
