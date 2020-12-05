@@ -2,13 +2,15 @@ var MessageView = {
 
   render: _.template(`
       <div class="chat">
-        <div class="username">${message.username}</div>
-        <div>${message.text}</div>
+        <div class="username"><%- username %></div>
+        <div><%- text %></div>
       </div>
     `),
 
   renderMessage: function(message) {
     // render message to DOM in chats section
+    var test = MessageView.render(message);
+    console.log(test);
     return MessageView.render(message);
   }
 };
