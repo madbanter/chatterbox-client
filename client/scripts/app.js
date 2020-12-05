@@ -25,6 +25,13 @@ var App = {
       MessagesView.initialize();
       callback();
     });
+    Parse.readAll((data) => {
+      // examine the response from the server request:
+      console.log(data);
+      Rooms.allRooms = data.results;
+      RoomsView.initialize();
+      callback();
+    }, null, '/classes/rooms');
   },
 
   startSpinner: function() {
